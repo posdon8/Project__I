@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meeting Room</title>
+        <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <div id="banner" class="banner">
+            <h1>Welcome to Posdon.t</h1>
+            <p>Contact everyone and love them! <i class="fas fa-heart"></i></p>
+            <div id="datetime">...</div>
+            
+        </div>
+        <div id="app" class="app">
+          <div id="home" class="home">
+          <img id="img1" src="/images/camera-removebg-preview.png" alt="cam">
+
+            <h1>Meeting Room</h1>
+            
+            <div id="login">
+                <input type="text" id="username" placeholder="Enter your name">
+                <button onclick="login() ">Login</button>
+              </div> 
+              
+              
+            <div id="create-meeting" >
+                <button onclick="createMeeting()">New Meeting</button>
+                <br>
+                <input type="text" id="room-id" placeholder="Enter Room ID">
+                <button onclick="joinMeeting()">Join Meeting</button>
+              </div></div> 
+              <div id="meeting-room" >
+                <video id="local-video" autoplay muted></video>
+                <button onclick="toggleCamera()">Turn On/Off</button>
+                <button onclick="toggleMic()">Toggle Mic</button>
+                <div id="chat-box">
+                  <input type="text" id="message" placeholder="Type a message">
+                  <button onclick="sendMessage()">Send</button>
+                  <div id="chat-messages"></div>
+                </div>
+              </div>
+              
+            </div>
+            <script src="script.js"></script>
+            <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+
+        </div>
+    </body>
+</html>
