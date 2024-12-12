@@ -2,7 +2,7 @@ let username = '';
 let roomId = '';
 let localStream;
 
-const socket = io('https://project-i-x766.onrender.com');
+const socket = io('https://project-i-54t6.onrender.com');
 socket.on('connect', () => {
   console.log('Connected to server');
 });
