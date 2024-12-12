@@ -1,0 +1,23 @@
+{
+  "name": "meeting-room-backend",
+  "version": "1.0.0",
+  "description": "Backend for the meeting room application using Express and Socket.io.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "meeting-room",
+    "socket.io",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "meeting-room-backend": "file:",
+    "socket.io": "^4.8.1",
+    "uuid": "^11.0.3"
+  }
+}

@@ -1,0 +1,106 @@
+body {
+    display: grid;
+    place-items: center;
+  font-family: Arial, sans-serif;
+    text-align: center;
+  }
+#img1 {
+    width: 150px;
+    height: 150px;
+   
+}
+#datetime {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  top: 10px;
+  right: 10px;
+  position: fixed;
+}
+.banner{
+
+    color:black;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: large;
+}
+.home {
+    margin-top: 30px;
+    background-color: rgb(59, 59, 249);
+    width: 500px;
+    align-items: center;  
+    justify-content: center;
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2)  ;
+    border-radius: 10px;
+    color: rgb(253, 253, 253);
+}
+  
+#icon {
+    size: 40px;
+}
+#chat-box {
+    margin-top: 20px;
+  }
+  
+#chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+input {
+    background-color: rgb(255, 255, 255);
+    border-radius:  10px;
+    height: 35px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    font-size: medium;
+}  
+input:hover{
+  background-color:rgb(242, 238, 232);
+}
+h1 {
+  text-shadow: 1.1px 1.1px rgb(229, 119, 134); 
+}
+#login button{
+  border-radius: 40%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+#login button:hover {
+  background-color:brown; /* Màu khi hover */
+}
+#create-meeting button{
+  height: 35px;
+  font-size: medium;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#room-id{
+  margin-top: 5px;
+}
+#create-meeting{
+  display: none;
+}
+#meeting-room{
+  display: none;
+}
+#meeting-room button{
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 40%;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+#meeting-room button:hover{
+  background-color:rgb(215, 56, 56);
+}
