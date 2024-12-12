@@ -10,7 +10,7 @@ const cors = require('cors');
 const PORT = process.env.PORT || 4000; // Sử dụng PORT từ môi trường hoặc mặc định là 4000
 
 app.use(cors({
-  origin: "https://project-i-x766.onrender.com",  // Cho phép tất cả các nguồn
+  origin: "https://project-i-54t6.onrender.com",  // Cho phép tất cả các nguồn
   methods: ["GET", "POST"]
 }));
 
