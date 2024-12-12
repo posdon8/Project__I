@@ -109,6 +109,3 @@ socket.on('receive-message', ({ username, message }) => {
 });
 
 
-socket.on('connect', () => {
-  console.log('Connected to server');
-});
