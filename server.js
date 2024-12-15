@@ -55,9 +55,15 @@ io.on('connection', (socket) => {
         socket.emit('error', 'Phòng đã đầy!');
         return;
       }
-      rooms[roomId].users.push({username, socketId: socket.id});
+      rooms[roomId].users.push({username, socketId: socket.id, stream: null});
       socket.join(roomId);
       io.to(roomId).emit('user-joined', rooms[roomId].users); // Thông báo cho các người dùng khác
+      rooms[roomId].users.forEach((user) => {
+        if (user.socketId !== socket.id && user.stream) { // Kiểm tra nếu người dùng đã có stream
+          const streamData = { username: user.username, socketId: user.socketId, stream: user.stream };
+          socket.emit('new-user-stream', streamData); // Gửi stream của người khác cho người mới vào
+        }
+      });
       console.log(`${username} joined room ${roomId}`);
     } else {
       socket.emit('error', 'Room not found');
