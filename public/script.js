@@ -80,16 +80,19 @@ function updateUsers(users) {
     const userDiv = document.createElement('div');
     userDiv.className = 'user';
     userDiv.id = `user-${user.socketId}`;
+
     const video = document.createElement('video');
     video.autoplay = true;
     video.muted = user.socketId === socket.id;
     video.id = `video-${user.socketId}`;
     userDiv.appendChild(video);
+
     const usernameDiv = document.createElement('div');
     usernameDiv.textContent = user.username;
     usernameDiv.className = 'username';
     userDiv.appendChild(usernameDiv);
     userContainer.appendChild(userDiv);
+    
     if (user.socketId === socket.id) {
       const video = document.getElementById(`video-${user.socketId}`);
       video.srcObject = localStream;
@@ -113,10 +116,15 @@ async function startStream() {
 
 // Khi nhận stream của các người tham gia khác
 socket.on('new-user-stream', (data) => {
+  const userDiv = document.createElement('div');
+  userDiv.className = 'user';
+  userDiv.id = `user-${data.socketId}`;
+
   const userVideo = document.createElement('video');
   userVideo.autoplay = true;
   userVideo.srcObject = data.stream;
   userDiv.appendChild(userVideo);
+  
   const usernameDiv = document.createElement('div');
   usernameDiv.textContent = data.username;
   usernameDiv.className = 'username';
@@ -170,6 +178,11 @@ socket.on('receive-message', ({ username, message }) => {
 
   chatMessages.scrollTop = chatMessages.scrollHeight; // Cuộn xuống cuối cùng
 });
+
+
+
+
+
 
 
 
