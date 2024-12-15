@@ -49,9 +49,23 @@ body {
   
 #chat-messages {
     height: 200px;
-    overflow-y: auto;
+    overflow-y: scroll;
     border: 1px solid #ccc;
     padding: 10px;
+   
+    background-color: #f9f9f9;
+  }
+  .message {
+    margin-bottom: 10px;
+  }
+  
+  .sender-name {
+    font-weight: bold;
+    color: #007bff; /* Màu xanh cho tên người gửi */
+  }
+  
+  .message-content {
+    color: #333; /* Màu đen đậm cho nội dung */
   }
 input {
     background-color: rgb(255, 255, 255);
@@ -104,3 +118,33 @@ h1 {
 #meeting-room button:hover{
   background-color:rgb(215, 56, 56);
 }
+
+/* CSS để bố trí video của các người tham gia */
+#user-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+
+.user video {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.username {
+  margin-top: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
