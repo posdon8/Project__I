@@ -90,7 +90,10 @@ function updateUsers(users) {
     usernameDiv.className = 'username';
     userDiv.appendChild(usernameDiv);
     userContainer.appendChild(userDiv);
-  });
+    if (user.socketId === socket.id) {
+      const video = document.getElementById(`video-${user.socketId}`);
+      video.srcObject = localStream;
+  }});
 }
 
 
@@ -113,7 +116,14 @@ socket.on('new-user-stream', (data) => {
   const userVideo = document.createElement('video');
   userVideo.autoplay = true;
   userVideo.srcObject = data.stream;
-  document.getElementById('user-container').appendChild(userVideo);
+  userDiv.appendChild(userVideo);
+  const usernameDiv = document.createElement('div');
+  usernameDiv.textContent = data.username;
+  usernameDiv.className = 'username';
+  userDiv.appendChild(usernameDiv);
+
+  // Thêm div này vào container
+  document.getElementById('user-container').appendChild(userDiv);
 });
 
 // Bật/tắt camera
@@ -160,6 +170,10 @@ socket.on('receive-message', ({ username, message }) => {
 
   chatMessages.scrollTop = chatMessages.scrollHeight; // Cuộn xuống cuối cùng
 });
+
+
+
+
 
 
 
