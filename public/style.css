@@ -123,6 +123,7 @@ h1 {
 #user-container {
   display: flex;
   flex-wrap: wrap;
+  height: 100px;
   gap: 10px;
   justify-content: center;
 }
@@ -144,6 +145,24 @@ h1 {
   margin-top: 5px;
   font-weight: bold;
   text-align: center;
+}
+/* CSS cho div chứa video của bạn */
+#local-video-container {
+  position: absolute;
+  bottom: 20px; /* Cách dưới cùng 20px */
+  right: 20px;  /* Cách phải 20px */
+  width: 400px; /* Chiều rộng video chính */
+  height: 350px; /* Chiều cao video chính */
+  border: 2px solid #ccc; /* Đường viền của video */
+  background-color: #000; /* Màu nền của video */
+  z-index: 999; /* Đảm bảo video của bạn nằm trên các phần tử khác */
+}
+
+/* Video chính của bạn */
+#local-video {
+  width: 100%;  /* Đảm bảo video chiếm toàn bộ chiều rộng của div */
+  height: 100%; /* Đảm bảo video chiếm toàn bộ chiều cao của div */
+  object-fit: cover; /* Giữ tỷ lệ video phù hợp */
 }
 
 
