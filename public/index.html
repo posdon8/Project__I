@@ -6,7 +6,6 @@
         <title>Meeting Room</title>
         <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
-
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
@@ -36,11 +35,15 @@
                 <button onclick="joinMeeting()">Join Meeting</button>
               </div></div> 
               <div id="meeting-room" >
-                  <h2>Room ID: <span id="room-id-display"></span></h2>
+                <h2>Room ID: <span id="room-id-display"></span></h2>
                 <div id="user-container"></div>
+                <div id="local-video-container">
+                  <video id="local-video" autoplay muted></video>
+                </div>
+                
                 <video id="local-video" autoplay muted></video>
                 <button onclick="toggleCamera()">Turn On/Off</button>
-                <button onclick="toggleMic()">Toggle Mic</button>
+                <button onclick="toggleMic()">Turn On/Off Mic</button>
                 <div id="chat-box">
                   <input type="text" id="message" placeholder="Type a message">
                   <button onclick="sendMessage()">Send</button>
